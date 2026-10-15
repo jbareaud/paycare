@@ -9,9 +9,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements if you have one, otherwise install pandas directly
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-#RUN pip install --no-cache-dir pandas
+#COPY requirements.txt .
+#RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir pandas
 
 # Copy ETL script (and optionally sample CSVs if present)
 COPY etl.py .
